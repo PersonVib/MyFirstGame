@@ -1,0 +1,25 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        string[] vegetables = { "potato", "carrot", "onion", "tomato", "cucumber" };
+
+        DisplayArray("Original array of vegetables:", vegetables);
+
+        Array.Reverse(vegetables);
+
+        DisplayArray("Reversed array of vegetables:", vegetables);
+    }
+
+    static void DisplayArray(string message, string[] array)
+    {
+        Console.WriteLine(message);
+        foreach (string veggie in array)
+        {
+            Console.Write(veggie + " ");
+        }
+        Console.WriteLine();
+    }
+}
