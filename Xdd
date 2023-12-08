@@ -1,0 +1,43 @@
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main()
+    {
+        List<double> millimetersArray = new List<double>();
+
+        while (true)
+        {
+            Console.Write("Введите число в миллиметрах (для завершения введите 'stop'): ");
+            string input = Console.ReadLine();
+
+            if (input.ToLower() == "stop")
+            {
+                break;
+            }
+
+            double millimeters;
+            if (double.TryParse(input, out millimeters))
+            {
+                millimetersArray.Add(millimeters);
+            }
+            else
+            {
+                Console.WriteLine("Неверный формат числа, попробуйте снова.");
+            }
+        }
+
+        List<double> kilometersArray = new List<double>();
+        foreach (double millimeters in millimetersArray)
+        {
+            double kilometers = millimeters / 1000000;
+            kilometersArray.Add(kilometers);
+        }
+
+        foreach (var kilometerValue in kilometersArray)
+        {
+            Console.WriteLine(kilometerValue); 
+        }
+    }
+}
